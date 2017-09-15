@@ -1,0 +1,126 @@
+﻿<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order details</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
+    <style>
+        body {
+    padding-top:50px;
+}
+fieldset {
+    border: thin solid #ccc; 
+    border-radius: 4px;
+    padding: 20px;
+    padding-left: 40px;
+    background: #fbfbfb;
+}
+legend {
+   color: #678;
+}
+.form-control {
+    width: 95%;
+}
+label small {
+    color: #678 !important;
+}
+span.req {
+    color:maroon;
+    font-size: 112%;
+}
+footer {
+    margin-top:5%;
+}
+
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <form action="" method="post" id="fileForm" role="form">
+                    <fieldset>
+                        <legend class="text-center">Enter your order details here</legend>
+                        <div class="form-group">
+                            <label for="firstName">First Name: </label>
+                            <input required type="text" name="firstName" class="form-control"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last name: </label>
+                            <input class="form-control" type="text" name="lastName" />
+                            
+                        </div>
+                        <div class="form-group">
+                            <label for="city">City: </label>
+                            <input class="form-control" type="text" name="city" />
+                            
+                        </div>
+                        <div class="form-group">
+                            <label for="postalCode">Postal Code: </label>
+                            <input class="form-control" type="text" name="postalCode"/>
+                            
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number:</label>
+                            <input class="form-control" type="text" name="phone" />
+                            
+                        </div>
+                        <div class="form-group">
+                            <label for="province">Province: </label>
+                            <select class="form-control" name="province">
+                                <option value="alberta">Alberta</option>
+                                <option value="bc">British Columbia</option>
+                                <option value="manitoba">Manitoba</option>
+                                <option value="nb">New Brunswick</option>
+                                <option value="nfAndLab">Newfoundland and Labrador</option>
+                                <option value="nWTerr">Northwest Territories</option>
+                                <option value="NovaScotia">Nova Scotia</option>
+                                <option value="nunavut">Nunavut</option>
+                                <option value="ontario">Ontario</option>
+                                <option value="PEIsland">Prince Edward Island</option>
+                                <option value="quebec">Quebec</option>
+                                <option value="saskatchewan">Saskatchewan</option>
+                                <option value="yukon">Yukon</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <fieldset>
+                                <legend>Check your items here</legend>
+                                <input type="checkbox" name="item" value="2" style="padding-top:5px;"/><label style="padding-left:5px;">Burger</label><br />
+                                <input type="checkbox" name="item" value="3" style="padding-top:5px;"/><label style="padding-left:5px;">Rolled Oatmeal</label><br />
+                                <input type="checkbox" name="item" value="4" style="padding-top:5px;"/><label style="padding-left:5px;">French Toast</label><br />
+                                <input type="checkbox" name="item" value="5" style="padding-top:5px;"/><label style="padding-left:5px;">Belgian Waffles</label><br />
+                                <input type="checkbox" name="item" value="1" style="padding-top:5px;"/><label style="padding-left:5px;">Traditional BLT </label><br />
+                                <input type="checkbox" name="item" value="6" style="padding-top:5px;"/><label style="padding-left:5px;">Buttermilk Pancakes</label><br />
+                            </fieldset>
+                        </div>
+                        <div class="form-group">
+                            <input type="radio" name="type" value="Pickup" checked> Pick-up
+                            <input type="radio" name="type" value="Delivery"> Delivery
+                        </div>
+                        <div class="form-group">
+                            <label for="comments">Comments:</label> <br />
+                            <textarea class="form-control" name="comments"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input class="btn btn-success" type="submit" name="submit_reg" value="Register">
+                        </div>
+
+                    </fieldset>
+                </form><!-- ends register form -->
+                
+            </div><!-- ends col-6 -->
+
+            <div class="col-md-6">
+                <h1 class="page-header">Place your order!</h1>
+                <h3><b>Where food speaks with your palate</b></h3>
+            </div>
+        </div>
+    </div>
+    <footer>
+
+    </footer>
+</body>
+</html>

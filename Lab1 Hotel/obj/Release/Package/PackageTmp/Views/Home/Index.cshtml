@@ -40,72 +40,205 @@ footer {
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <form action="" method="post" id="fileForm" role="form">
+                <form action="Home" method="post" id="fileForm" role="form">
                     <fieldset>
                         <legend class="text-center">Enter your order details here</legend>
                         <div class="form-group">
                             <label for="firstName">First Name: </label>
-                            <input required type="text" name="firstName" class="form-control"/>
+                            <input required type="text" name="firstName" class="form-control" value="@TempData["firstName"]"/>
                         </div>
                         <div class="form-group">
                             <label for="lastName">Last name: </label>
-                            <input class="form-control" type="text" name="lastName" />
-                            
+                            <input class="form-control" type="text" name="lastName" value="@TempData["lastName"]"/>
+
                         </div>
                         <div class="form-group">
+                            <input type="submit" formaction="/Home/checkUser" formmethod="post" class="btn btn-success" value="Remember Me?"/>
+
+                        </div>
+                        @if (TempData["userFound"] != null && TempData["userFound"].ToString() == "Not Found")
+                        {
+                            <div class="form-group">
+                                <div class="alert alert-warning">
+                                    <strong>Sorry!</strong> This customer's details are not found in our records.
+                                </div>
+                            </div>
+                        }
+                        
+                        
+                        <div class="form-group">
                             <label for="city">City: </label>
-                            <input class="form-control" type="text" name="city" />
+                            <input class="form-control" type="text" name="city" value="@TempData["city"]"/>
                             
                         </div>
                         <div class="form-group">
                             <label for="postalCode">Postal Code: </label>
-                            <input class="form-control" type="text" name="postalCode"/>
+                            <input class="form-control" type="text" name="postalCode" value="@TempData["postalCode"]"/>
                             
                         </div>
                         <div class="form-group">
                             <label for="phone">Phone Number:</label>
-                            <input class="form-control" type="text" name="phone" />
+                            <input class="form-control" type="text" name="phone" value="@TempData["phone"]"/>
                             
                         </div>
                         <div class="form-group">
                             <label for="province">Province: </label>
                             <select class="form-control" name="province">
-                                <option value="alberta">Alberta</option>
+                                @if (TempData["province"]!=null && TempData["province"].ToString() == "alberta")
+                                {
+                                    <option value="alberta" selected>Alberta</option>
+                                }
+                                else
+                                {
+                                    <option value="alberta">Alberta</option>
+                                }
+
+                                @if (TempData["province"] != null && TempData["province"].ToString() == "bc")
+                                {
+                                    <option value="bc" selected>British Columbia</option>
+                                }
+                                else
+                                {
                                 <option value="bc">British Columbia</option>
-                                <option value="manitoba">Manitoba</option>
-                                <option value="nb">New Brunswick</option>
-                                <option value="nfAndLab">Newfoundland and Labrador</option>
-                                <option value="nWTerr">Northwest Territories</option>
-                                <option value="NovaScotia">Nova Scotia</option>
-                                <option value="nunavut">Nunavut</option>
-                                <option value="ontario">Ontario</option>
-                                <option value="PEIsland">Prince Edward Island</option>
-                                <option value="quebec">Quebec</option>
-                                <option value="saskatchewan">Saskatchewan</option>
-                                <option value="yukon">Yukon</option>
+                                }
+
+                                @if (TempData["province"] != null && TempData["province"].ToString() == "manitoba")
+                                {
+                                    <option value="manitoba" selected>Manitoba</option>
+                                }
+                                else
+                                {
+                                    <option value="manitoba">Manitoba</option>
+                                }
+                                
+                                @if (TempData["province"] != null && TempData["province"].ToString() == "nb")
+                                {
+                                    <option value="nb" selected>New Brunswick</option>
+                                }
+                                else
+                                {
+                                    <option value="nb">New Brunswick</option>
+                                }
+
+                                @if (TempData["province"] != null && TempData["province"].ToString() == "nfAndLab")
+                                {
+                                    <option value="nfAndLab" selected>Newfoundland and Labrador</option>
+                                }
+                                else
+                                {
+                                    <option value="nfAndLab">Newfoundland and Labrador</option>
+                                }
+                                
+                                @if (TempData["province"] != null && TempData["province"].ToString() == "nWTerr")
+                                {
+                                    <option value="nWTerr" selected>Northwest Territories</option>
+                                }
+                                else
+                                {
+                                    <option value="nWTerr">Northwest Territories</option>
+                                }
+                                
+                                @if (TempData["province"] != null && TempData["province"].ToString() == "NovaScotia")
+                                {
+                                    <option value="NovaScotia" selected>Nova Scotia</option>
+                                }
+                                else
+                                {
+                                    <option value="NovaScotia">Nova Scotia</option>
+                                }
+                               
+                                @if (TempData["province"] != null && TempData["province"].ToString() == "nunavut")
+                                {
+                                    <option value="nunavut" selected>Nunavut</option>
+                                }
+                                else
+                                {
+                                    <option value="nunavut">Nunavut</option>
+                                }
+
+                                @if (TempData["province"] != null && TempData["province"].ToString() == "ontario")
+                                {
+                                    <option value="ontario" selected>Ontario</option>
+                                }
+                                else
+                                {
+                                    <option value="ontario">Ontario</option>
+                                }
+
+                                @if (TempData["province"] != null && TempData["province"].ToString() == "PEIsland")
+                                {
+                                    <option value="PEIsland" selected>Prince Edward Island</option>
+                                }
+                                else
+                                {
+                                    <option value="PEIsland">Prince Edward Island</option>
+                                }
+
+                                @if (TempData["province"] != null && TempData["province"].ToString() == "quebec")
+                                {
+                                    <option value="quebec" selected>Quebec</option>
+                                }
+                                else
+                                {
+                                    <option value="quebec">Quebec</option>
+                                }
+                                
+                                @if (TempData["province"] != null && TempData["province"].ToString() == "saskatchewan")
+                                {
+                                    <option value="saskatchewan" selected>Saskatchewan</option>
+                                }
+                                else
+                                {
+                                    <option value="saskatchewan">Saskatchewan</option>
+                                }
+                                
+                                @if (TempData["province"] != null && TempData["province"].ToString() == "yukon")
+                                {
+                                    <option value="yukon" selected>Yukon</option>
+                                }
+                                else
+                                {
+                                    <option value="yukon">Yukon</option>
+                                }
                             </select>
                         </div>
                         <div class="form-group">
                             <fieldset>
                                 <legend>Check your items here</legend>
-                                <input type="checkbox" name="item" value="2" style="padding-top:5px;"/><label style="padding-left:5px;">Burger</label><br />
-                                <input type="checkbox" name="item" value="3" style="padding-top:5px;"/><label style="padding-left:5px;">Rolled Oatmeal</label><br />
-                                <input type="checkbox" name="item" value="4" style="padding-top:5px;"/><label style="padding-left:5px;">French Toast</label><br />
-                                <input type="checkbox" name="item" value="5" style="padding-top:5px;"/><label style="padding-left:5px;">Belgian Waffles</label><br />
-                                <input type="checkbox" name="item" value="1" style="padding-top:5px;"/><label style="padding-left:5px;">Traditional BLT </label><br />
-                                <input type="checkbox" name="item" value="6" style="padding-top:5px;"/><label style="padding-left:5px;">Buttermilk Pancakes</label><br />
+                                <input type="checkbox" name="item" value="2" style="padding-top:5px;" @(TempData["items"]!=null && TempData["items"].ToString().Contains("2")?"checked":"")/><label style="padding-left:5px;">Burger</label><br />
+
+
+                                <input type="checkbox" name="item" value="3" style="padding-top:5px;" @(TempData["items"]!=null && TempData["items"].ToString().Contains("3")?"checked":"")/><label style="padding-left:5px;">Rolled Oatmeal</label><br />
+                                
+                                
+                                <input type="checkbox" name="item" value="4" style="padding-top:5px;" @(TempData["items"]!=null && TempData["items"].ToString().Contains("4")?"checked":"")/><label style="padding-left:5px;">French Toast</label><br />
+                                
+                                
+                                <input type="checkbox" name="item" value="5" style="padding-top:5px;" @(TempData["items"]!=null && TempData["items"].ToString().Contains("5")?"checked":"")/><label style="padding-left:5px;">Belgian Waffles</label><br />
+                                
+                                
+                                <input type="checkbox" name="item" value="1" style="padding-top:5px;" @(TempData["items"]!=null && TempData["items"].ToString().Contains("1")?"checked":"")/><label style="padding-left:5px;">Traditional BLT </label><br />
+                                
+                                
+                                <input type="checkbox" name="item" value="6" style="padding-top:5px;" @(TempData["items"]!=null && TempData["items"].ToString().Contains("6")?"checked":"")/><label style="padding-left:5px;">Buttermilk Pancakes</label><br />
+
+
                             </fieldset>
+
+
+</div>
+
+
+<div class="form-group">
+                            <input type="radio" name="type" value="Pickup" @(TempData["pickup"]!=null && TempData["pickup"].ToString()=="True"?"checked":"")> Pick-up
+                            <input type="radio" name="type" value="Delivery" @(TempData["pickup"]!=null && TempData["pickup"].ToString()=="False"?"checked":"")> Delivery
                         </div>
                         <div class="form-group">
-                            <input type="radio" name="type" value="Pickup" checked> Pick-up
-                            <input type="radio" name="type" value="Delivery"> Delivery
+                            <label for="comments">Comments: (max-200 characters)</label> <br />
+                            <textarea class="form-control" name="comments">@(TempData["comments"]!=null? TempData["comments"].ToString():"")</textarea>
                         </div>
                         <div class="form-group">
-                            <label for="comments">Comments:</label> <br />
-                            <textarea class="form-control" name="comments"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <input class="btn btn-success" type="submit" name="submit_reg" value="Register">
+                            <input class="btn btn-success" type="submit" name="submit_reg" value="Place Order">
                         </div>
 
                     </fieldset>
